@@ -33,9 +33,9 @@ type jsonTextToImageResponse struct {
 }
 
 type jsonInfoResponse struct {
-	Seed        int64 `json:"seed"`
+	Seed        int64   `json:"seed"`
 	AllSeeds    []int64 `json:"all_seeds"`
-	AllSubseeds []int `json:"all_subseeds"`
+	AllSubseeds []int   `json:"all_subseeds"`
 }
 
 type TextToImageResponse struct {
@@ -52,7 +52,7 @@ type TextToImageRequest struct {
 	RestoreFaces      bool    `json:"restore_faces"`
 	EnableHR          bool    `json:"enable_hr"`
 	HRUpscaleRate     float64 `json:"hr_scale"`
-	HRUpscaler	  string  `json:"hr_upscaler"`
+	HRUpscaler        string  `json:"hr_upscaler"`
 	HRResizeX         int     `json:"hr_resize_x"`
 	HRResizeY         int     `json:"hr_resize_y"`
 	DenoisingStrength float64 `json:"denoising_strength"`
@@ -129,14 +129,14 @@ func (api *apiImpl) TextToImage(req *TextToImageRequest) (*TextToImageResponse, 
 type UpscaleRequest struct {
 	ResizeMode         int                 `json:"resize_mode"`
 	UpscalingResize    int                 `json:"upscaling_resize"`
-	Upscaler1          string              `json:"upscaler1"`
+	Upscaler1          string              `json:"upscaler_1"`
 	TextToImageRequest *TextToImageRequest `json:"text_to_image_request"`
 }
 
 type upscaleJSONRequest struct {
 	ResizeMode      int    `json:"resize_mode"`
 	UpscalingResize int    `json:"upscaling_resize"`
-	Upscaler1       string `json:"upscaler1"`
+	Upscaler1       string `json:"upscaler_1"`
 	Image           string `json:"image"`
 }
 
